@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.*;
+import java.util.ArrayList;
+
+public class mergesort{
+
+    ArrayList<Integer> a;
+    ArrayList<Integer> b;
+    ArrayList<Integer> result;
+    public mergesort() {
+
+    ArrayList<Integer> a = new ArrayList<Integer>;
+    a.add(1);
+    a.add(7);
+    a.add(13);
+    ArrayList<Integer> b = new ArrayList<Integer>;
+    b.add(4);
+    b.add(5);
+    b.add(24);
+    }
+
+    public void merge(ArrayList<Integer> A, ArrayList<Integer> B){
+
+	if (A.get(A.size()) < B.get(0)){
+	    result.addAll(A);
+	    result.addAll(B);
+	} else if (B.get
+    }
