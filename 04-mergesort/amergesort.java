@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.*;
+import java.util.Arrays;
 
 public class amergesort{
     public int[] merge(int[] a, int[] b){
@@ -62,8 +63,8 @@ public class amergesort{
 	L[4] = 7;
 	L[5] = 396;
 	L[6] = 104;
-	System.out.println(L);
-	System.out.println(m.sort(L));
+	System.out.println(Arrays.toString(L));
+	System.out.println(Arrays.toString(m.sort(L)));
 
     }
 

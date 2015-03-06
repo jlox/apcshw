@@ -13,8 +13,7 @@ public class mergesort{
 	ArrayList<Integer> r1 = new ArrayList<Integer>();
 	ArrayList<Integer> r2 = new ArrayList<Integer>();
 	if (L.size() == 1){
-	    return a;
-	    return b;
+	    return L;
 	} else {
 	    r1 = sort(a);
 	    r2 = sort(b);
