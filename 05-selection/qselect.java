@@ -1,12 +1,13 @@
 import java.util.*;
 import java.io.*;
-public class Qselect{
+
+public class qselect{
     private int[] a,b;
     Random rnd = new Random();
-    public Qselect(){
+    public qselect(){
 	this(20);
     }
-    public Qselect(int n){
+    public qselect(int n){
 	Random r = new Random();
 	a = new int[n];
 	for (int i = 0; i < a.length; i++) {
@@ -71,16 +72,19 @@ public class Qselect{
     }
 
     public int[] qsort(int[] a, int k, int l, int h){
+	int[] sorted = new int[a.length];
 	int pi,pval;
 	pi = partition(a,l,h);
 	pval = a[pi];
+	int count = 0;
 	if (a.length == 0 || a.length == 1){
-	    return a;
+	    sorted[count] = a[0];
+	    count = count + 1;
+	} else {
+	    qsort(a,k,pi+1,h);
+	    qsort(a,k,l,pi-1);
 	}
-	else {
-	    return qselect(a,k,pi+1,h);
-	    return qselect(a,k,l,pi-1);
-	}
+	return sorted;
     }
 		
     public int select(int k){
@@ -89,7 +93,7 @@ public class Qselect{
     }
 		
     public static void main(String[] args) {
-	Qselect q = new Qselect();
+	qselect q = new qselect();
 	System.out.println(q);
 	for (int i=0;i<5;i++) {
 	    System.out.print(q.select(i)+" ");
@@ -98,6 +102,8 @@ public class Qselect{
 	Arrays.sort(q.a);
 				
 	System.out.println(q);
+	int[] test = {7, 1, 9, 3, 6};
+	System.out.println(q.qsort(test, 1, 0, 5));
 
     }
 }
