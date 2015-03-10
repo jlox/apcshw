@@ -94,7 +94,7 @@ public class qselect{
 		
     public static void main(String[] args) {
 	qselect q = new qselect();
-	System.out.println(q);
+	/*System.out.println(q);
 	for (int i=0;i<5;i++) {
 	    System.out.print(q.select(i)+" ");
 	}
@@ -102,6 +102,7 @@ public class qselect{
 	Arrays.sort(q.a);
 				
 	System.out.println(q);
+	*/
 	int[] test = {7, 1, 9, 3, 6};
 	System.out.println(q.qsort(test, 1, 0, 5));
 
