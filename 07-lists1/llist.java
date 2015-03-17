@@ -1,4 +1,5 @@
 public class llist {
+    
     private node l=null;
 
     public void add(String s){
@@ -18,19 +19,26 @@ public class llist {
     }
 
     public node find(int n){
+	node tmp = l;
 	int c = 0;
-	node l;
-	node result = l;
-	while (c < n){
-	    result = l.getNext();
+	while(c<n){
+	    tmp = tmp.getNext();
 	    c++;
 	}
-	return result;
+	return tmp;
     }
  
 
     public void insert(int n, String s){
-	l.find(n).add(s);
+	node newNode = new node(s);
+	if(n == 0){
+	    newNode.setNext(l);
+	    l = newNode;
+	} else {
+	    node othernode = find(n-1);
+	    newNode.setNext(othernode.getNext());
+	    othernode.setNext(newNode);
+	}
     }
 		
 }

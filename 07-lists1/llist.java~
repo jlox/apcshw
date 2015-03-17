@@ -18,25 +18,19 @@ public class llist {
     }
 
     public node find(int n){
-	node tmp = l;
 	int c = 0;
-	while(c<n){
-	    tmp = tmp.getNext();
+	node l;
+	node result = l;
+	while (c < n){
+	    result = l.getNext();
 	    c++;
 	}
-	return tmp;
+	return result;
     }
  
 
     public void insert(int n, String s){
-	node newNode = new node(s);
-	if(n == 0){
-	    newNode.setNext(l);
-	    l = newNode;
-	} else {
-	    node othernode = find(n-1);
-	    newNode.setNext(othernode.getNext());
-	    othernode.setNext(newNode);
-	}
-    }		
+	l.find(n).add(s);
+    }
+		
 }
