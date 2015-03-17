@@ -19,10 +19,10 @@ public class llist {
 
     public node find(int n){
 	int c = 0;
-	node tmp;
-	node result = tmp;
+	node l;
+	node result = l;
 	while (c < n){
-	    result = tmp.getNext();
+	    result = l.getNext();
 	    c++;
 	}
 	return result;
@@ -30,9 +30,7 @@ public class llist {
  
 
     public void insert(int n, String s){
-	int c = 0;
-	node tmp;
-	tmp.find(n).add(s);
+	l.find(n).add(s);
     }
 		
 }
