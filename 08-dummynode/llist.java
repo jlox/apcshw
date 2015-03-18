@@ -26,7 +26,7 @@ public class llist {
 	    newNode.setNext(l);
 	    l = newNode;
 	} else {
-	    node othernode = find(n-1);
+	    node othernode = get(n-1);
 	    newNode.setNext(othernode.getNext());
 	    othernode.setNext(newNode);
 	}
@@ -42,11 +42,10 @@ public class llist {
 	return tmp;
     }
 
-    public void remove(int n){
-	if (n == 0){
-	} else {
-	    node prenode = find(n-1);
-	    node postnode = find(n+1);
-	    prenode.setNext(postnode);
+    public void remove(int n) {
+	node prenode = get(n - 1);
+	node postnode = get(n + 1);
+	prenode.setNext(postnode);
+	len--;
     }
 }
