@@ -13,14 +13,14 @@ public class llist {
 	return s;
     }
 
-    public void add(String s){
+    public void add(int s){
 	node tmp = new node(s);
-	tmp.setNext(l);
 	l = tmp;
+	tmp.setNext(l);
 	len++;
     }
     
-    public void add(int n, String s){
+    public void add(int n, int s){
 	node newNode = new node(s);
 	if(n == 0){
 	    newNode.setNext(l);
@@ -39,6 +39,8 @@ public class llist {
 	    tmp = tmp.getNext();
 	    c++;
 	}
+	//String s = tmp.getData();
+	//return s;
 	return tmp;
     }
 
@@ -47,5 +49,10 @@ public class llist {
 	node postnode = get(n + 1);
 	prenode.setNext(postnode);
 	len--;
+    }
+
+    public static void main(String[] args){
+	node n = new node(7);
+	n.add(6);
     }
 }

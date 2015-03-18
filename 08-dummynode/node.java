@@ -1,18 +1,18 @@
 public class node {
 
-    private String data;
+    private int data;
     private node next;
 
-    public node(String s){
+    public node(int s){
 	data = s;
 	next = null;
     }
 
-    public void setData(String s){
+    public void setData(int s){
 	data = s;
     }
 
-    public String getData(){
+    public int getData(){
 	return data;
     }
 
@@ -24,10 +24,13 @@ public class node {
 	return next;
     }
 
+    /*
     public String toString(){
 	return data;
     }
+    */
 
+    /*
     public static void main(String[] args){
 	node n = new node("hello");
 	System.out.println(n);
@@ -63,4 +66,5 @@ public class node {
 	    System.out.println(tmp);
 	}
     }
+    */
 }
