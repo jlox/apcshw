@@ -24,9 +24,11 @@ public class node {
 	return next;
     }
 
+    /*
     public String toString(){
-	return "" +  data;
+	return data;
     }
+    */
 
     /*
     public static void main(String[] args){

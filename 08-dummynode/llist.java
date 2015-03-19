@@ -1,6 +1,6 @@
 public class llist {
     
-    private node l=null;
+    private node s, e;
     private int len=0;
 
     public String toString(){
@@ -15,33 +15,36 @@ public class llist {
 
     public void add(int s){
 	node tmp = new node(s);
-	l = tmp;
-	tmp.setNext(l);
+        s.setNext(tmp);
+	tmp.setNext(e);
+	e = tmp;
 	len++;
     }
     
     public void add(int n, int s){
 	node newNode = new node(s);
-	if(n == 0){
-	    newNode.setNext(l);
-	    l = newNode;
+	node prenode = s;
+	for (int i = 0; i < n; i++) {
+	    prenode = prenode.getNext();
+	}
+	newNode.setNext(prenode.getNext());
+	prenode.setNext(newNode);
+	len++;
+    }
+	
+    //help from Caitlin
+    public int get(int n){
+	if (n >= len || n < 0) {
+	    throw new IndexOutOfBoundsException();
 	} else {
-	    node othernode = get(n-1);
-	    newNode.setNext(othernode.getNext());
-	    othernode.setNext(newNode);
+	    Node tmp = s;
+	    int counter = -1;
+	    while(counter < n && counter < len) {
+		tmp = tmp.getNext();
+		counter++;
+	    }
+	    return tmp.getData();
 	}
-    }	
-
-    public node get(int n){
-	node tmp = l;
-	int c = 0;
-	while(c<n){
-	    tmp = tmp.getNext();
-	    c++;
-	}
-	//String s = tmp.getData();
-	//return s;
-	return tmp;
     }
 
     public void remove(int n) {
