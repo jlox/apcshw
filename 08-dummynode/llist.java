@@ -3,8 +3,13 @@ public class llist {
     private node start, end;
     private int len=0;
 
+    public llit getLlit(){
+	llit LLit = new llit(start);
+	return LLit;
+    }
+    
     public llist(){
-	start = new node(0);
+	start = new node(0); // make dummy node???
     }
     
     public String toString(){

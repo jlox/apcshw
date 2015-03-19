@@ -1,0 +1,6 @@
+public class llit{
+    private node l;
+    public llit(node n){
+	l = n;
+    }
+}
