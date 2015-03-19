@@ -1,12 +1,16 @@
 public class llist {
     
-    private node s, e;
+    private node start, end;
     private int len=0;
 
+    public llist(){
+	start = new node(0);
+    }
+    
     public String toString(){
 	String s = "";
 	node tmp;
-	for (tmp = l; tmp != null; tmp=tmp.getNext()){
+	for (tmp = start; tmp != null; tmp=tmp.getNext()){
 	    s = s + tmp + " --> ";
 	}
 	s = s + "null";
@@ -15,15 +19,15 @@ public class llist {
 
     public void add(int s){
 	node tmp = new node(s);
-        s.setNext(tmp);
-	tmp.setNext(e);
-	e = tmp;
+        start.setNext(tmp);
+	tmp.setNext(end);
+	end = tmp;
 	len++;
     }
     
     public void add(int n, int s){
 	node newNode = new node(s);
-	node prenode = s;
+	node prenode = start;
 	for (int i = 0; i < n; i++) {
 	    prenode = prenode.getNext();
 	}
@@ -37,7 +41,7 @@ public class llist {
 	if (n >= len || n < 0) {
 	    throw new IndexOutOfBoundsException();
 	} else {
-	    Node tmp = s;
+	    node tmp = start;
 	    int counter = -1;
 	    while(counter < n && counter < len) {
 		tmp = tmp.getNext();
@@ -47,15 +51,43 @@ public class llist {
 	}
     }
 
+    /*
     public void remove(int n) {
 	node prenode = get(n - 1);
 	node postnode = get(n + 1);
 	prenode.setNext(postnode);
 	len--;
-    }
+	}
+    */
 
+    public int removei(int n) {
+	node tmp = start;
+	for (int i = 0; i < n; tmp = tmp.getNext()) {
+	    if (tmp.getNext() == null) {
+		throw new IndexOutOfBoundsException();
+	    }
+	    i++;
+	}
+	node result = tmp.getNext();
+	tmp.setNext(tmp.getNext().getNext());
+	len--;
+	return result.getData();
+    }
+    
+    public boolean remove(int n){
+	node tmp = start;
+	while (tmp.getNext() != null) {
+	    if (tmp.getNext().getData() == n) {
+		tmp.setNext(tmp.getNext().getNext());
+		return true;
+	    }
+	    tmp = tmp.getNext();
+	}
+	return false;
+    }
+    
     public static void main(String[] args){
-	node n = new node(7);
+	llist n = new llist();
 	n.add(6);
     }
 }

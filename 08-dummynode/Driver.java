@@ -8,7 +8,9 @@ public class Driver{
 	System.out.println(t);
 
 	long start, elapsed, start2, elapsed2, start3, elapsed3;
-	int ai, lli, lii;
+	long ai = 0;
+	long lli = 0;
+	long lii = 0;
 
 	start = System.currentTimeMillis();
 	ArrayList<Integer> a = new ArrayList<Integer>();
@@ -22,7 +24,7 @@ public class Driver{
 	System.out.println(elapsed);
 
 	start2 = System.currentTimeMillis();
-	node n = new node(r.nextInt(10));
+	llist n = new llist();
 	for (int i=0; i<999; i++){
 	    int rll = r.nextInt(10);
 	    n.add(rll);
