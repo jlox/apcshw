@@ -32,7 +32,7 @@ public class llist {
 	len++;
     }
 	
-    //help from Caitlin
+    //help from Caitlin's code
     public int get(int n){
 	if (n >= len || n < 0) {
 	    throw new IndexOutOfBoundsException();
