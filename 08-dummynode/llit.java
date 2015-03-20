@@ -21,4 +21,8 @@ move to the next node and return the value in the node (before the move)
 	t = t.getNext();
 	return retval;
     }
+
+    public void remove(){
+
+    }
 }
