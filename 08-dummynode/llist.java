@@ -1,11 +1,14 @@
-public class llist {
+import java.io.*;
+import java.util.*;
+
+public class llist<E> implements Iterable<E> {
     
     private node start, end;
     private int len=0;
 
-    public llit getLlit(){
-	llit LLit = new llit(start);
-	return LLit;
+    public Iterator<E> iterator()(){
+	llit<E> i = new llit<E>(l.getNext());
+	return i;
     }
     
     public llist(){
@@ -14,14 +17,20 @@ public class llist {
     
     public String toString(){
 	String s = "";
-	node tmp;
-	for (tmp = start; tmp != null; tmp=tmp.getNext()){
+	Node<E> tmp;;
+	for (tmp=l.getNext() ; tmp!=null ; tmp=tmp.getNext()){
 	    s = s + tmp + " --> ";
 	}
 	s = s + "null";
 	return s;
     }
 
+    public void add(E s){
+	Node<E> tmp = new Node<E>(s);
+	tmp.setNext(l.getNext());
+	l.setNext(tmp);
+    }
+    /*
     public void add(int s){
 	node tmp = new node(s);
         start.setNext(tmp);
@@ -29,7 +38,7 @@ public class llist {
 	end = tmp;
 	len++;
     }
-    
+    */
     public void add(int n, int s){
 	node newNode = new node(s);
 	node prenode = start;
@@ -89,10 +98,5 @@ public class llist {
 	    tmp = tmp.getNext();
 	}
 	return false;
-    }
-    
-    public static void main(String[] args){
-	llist n = new llist();
-	n.add(6);
     }
 }

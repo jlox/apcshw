@@ -1,19 +1,24 @@
-public class llit{
-    private node l;
-    public llit(node n){
-	l = n.getNext();
+import java.io.*;
+import java.util.*;
+
+public class llit<E> implements Iterator<E>{
+    private node<E> t;
+    
+    public llit(node<E> n){
+	t = n;
     }
 
     public boolean hasNext(){
-	return l != null;
+	return t != null;
     }
 
     /*
-mote to the next node and return teh value in the node (before the move)
+move to the next node and return the value in the node (before the move)
     */
-    public String next(){
-	String s = l.getData();
-	l = l.getNext();
-	return s;
+    
+    public E next(){
+	E retval = t.getData();
+	t = t.getNext();
+	return retval;
     }
 }

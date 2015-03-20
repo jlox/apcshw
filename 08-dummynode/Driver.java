@@ -1,9 +1,9 @@
 import java.io.*;
 import java.util.*;
-import java.lang.System;
 
 public class Driver{
     public static void main(String[] args){
+
 	long t = System.currentTimeMillis();
 	System.out.println(t);
 
