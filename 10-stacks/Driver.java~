@@ -1,0 +1,12 @@
+public class Driver{
+    public static void main(String[] args){
+	myStack<Integer> boo = new myStack<Integer>();
+	System.out.println(boo.empty());
+	boo.push(7);
+	boo.push(3);
+	boo.push(2);
+	boo.push(1);
+	boo.push(8);
+	System.out.println(boo);
+    }
+}
