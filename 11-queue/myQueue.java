@@ -1,4 +1,6 @@
-public class myQueue<E>{
+import java.util.*;
+
+public class myQueue<E> {
 
     private Node<E> head;
     private Node<E> tail;
@@ -11,14 +13,20 @@ public class myQueue<E>{
 
     public void enqueue(E data){
 	Node<E> tmp = new Node<E>(data);
-	tail.setNext(tmp);
-	tail = tmp;
+	if (size == 0){
+	    head = tmp;
+	    tail = tmp;
+	}
+	else {
+	    tail.setNext(tmp);
+	    tail = tmp;
+	}
 	size++;
     }
 
     public E dequeue(){
 	if (empty())
-	    throw new EmptyQueueException();
+	    throw new NoSuchElementException();
 	E data = head.getData();
 	head = head.getNext();
 	size--;
@@ -31,12 +39,23 @@ public class myQueue<E>{
 
     public E head(){
 	if (empty())
-	    throw new EmptyQueueException();
+	    throw new NoSuchElementException();
 	E data = head.getData();
 	return data;
     }
 
     public int size(){
-	return size;
+        return size;
     }
+
+    public String toString(){
+	String s = "";
+	Node<E> iter = head;
+	while (iter != null){
+	    s+= iter + " --> ";
+	    iter = iter.getNext();
+	}
+	return s;
+    }
+
 }

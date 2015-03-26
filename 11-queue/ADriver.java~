@@ -1,0 +1,10 @@
+public class ADriver{
+
+    public static void main(String[] args){
+	myAQueue aQ = new myAQueue();
+	System.out.println(aQ.empty());
+	aQ.enqueue(5);
+	System.out.println(aQ);
+	
+    }
+}
