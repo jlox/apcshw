@@ -1,18 +1,31 @@
-public class Node<E>{
+public class node<E>{
  
     private E data;
     private int x,y;
-    private Node<E> next;
+    private node<E> next;
 
     // no <E> in constructor
-    public Node(){
+    public node(){
 	data = null;
 	next = null;
     }
 
-    public Node(E s){
+    public node(E s){
 	data = s;
 	next = null;
+    }
+
+    public void setCor(int xcor, int ycor){
+	x = xcor;
+	y = ycor;
+    }
+
+    public int getX(){
+	return x;
+    }
+
+    public int getY(){
+	return y;
     }
     
     public void setData(E s){
@@ -23,11 +36,11 @@ public class Node<E>{
 	return data;
     }
 
-    public void setNext(Node<E> n){
+    public void setNext(node<E> n){
 	next = n;
     }
 
-    public Node<E> getNext(){
+    public node<E> getNext(){
 	return next;
     }
 
