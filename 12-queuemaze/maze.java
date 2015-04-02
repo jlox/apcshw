@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Maze 
+public class maze 
 {
     private char[][] board;
     private int maxX;
@@ -14,54 +14,6 @@ public class Maze
     private char visited = '.';
     private boolean solved = false;
     
-    public void solve(int x, int y){
-	node start = new node(x, y);
-	node n = new node()<char>;
-	queue frontier = new queue();
-
-	frontier.enqueue(start);
-	
-	if (board[x][y]==wall ||
-	    board[x][y]==me ||
-	    board[x][y]==visited ||
-	    solved){
-	    return;
-	}
-
-	if (board[x][y]==exit){
-	    System.out.println(this);
-	    solved = true;
-	}
-
-	board[x][y]=me;
-	
-	while(!frontier.empty()){
-	    n = frontier.dequeue();
-	    if(board[n.getX()][n.getY()] == exit){
-		return;
-	    }
-	    
-	    board[x][y]=me;
-
-	    if (board[x][y+1] != '.'){
-		node up = new node(x, y+1);
-		frontier.enqueue(up);
-	    } else if (board[x+1][y] != '.'){
-		node right = new node(x+1, y);
-		frontier.enqueue(right);
-	    } else if (board[x][y-1] != '.'){
-	    	node down = new node(x, y-1);
-		frontier.enqueue(down);
-	    } else if (board[x-1][y] != '.'){
-		node left = new node(x-1, y);
-		frontier.enqueue(left);
-	    }
-	}
-
-
-
-
-
 
 	/*
 	if (board[x][y]==wall ||
@@ -89,15 +41,15 @@ public class Maze
 	    frontier.enqueue(right);
 	} else if (board[x][y-1] != '.'){
 	    frontier.enqueue(down);
-	} else if (board[x-1][y] != '.'){
+	    } else if (board[x-1][y] != '.'){
 	    frontier.enqueue(left);
-	}
-	if(!solved){
+	    }
+	    if(!solved){
 	    frontier.dequeue();
-	}
-	while
+	    }
+	    while
 	*/
-    }
+
 		
     public void delay(int n){
 	try {
@@ -105,7 +57,7 @@ public class Maze
 	} catch (Exception e) {}
     }
 		
-    public Maze() 
+    public maze() 
     {
 	maxX=40;
 	maxY=20;
@@ -149,10 +101,58 @@ public class Maze
 			
     */
 		
-    public static void main(String[] args){
-	Maze m = new Maze();
-	System.out.println(m);
-	m.solve(1,1);
-	System.out.println(m);
-    }
+    public void solve(int x, int y){
+	node start = new node(x, y);
+	node n = new node()<char>;
+	queue frontier = new queue();
+
+	frontier.enqueue(start);
+	
+	if (board[x][y]==wall ||
+	    board[x][y]==me ||
+	    board[x][y]==visited ||
+	    solved){
+	    return;
+	}
+
+	if (board[x][y]==exit){
+	    System.out.println(this);
+	    solved = true;
+	}
+
+	board[x][y]=me;
+	
+	while(!frontier.empty()){
+	    n = frontier.dequeue();
+	    if(board[n.getX()][n.getY()] == exit){
+		return;
+	    }
+	    
+	    board[x][y]=me;
+
+	    if (board[x][y+1] != '.'){
+		node up = new node(x, y+1);
+		frontier.enqueue(up);
+	    } else if (board[x+1][y] != '.'){
+		node right = new node(x+1, y);
+		frontier.enqueue(right);
+	    } else if (board[x][y-1] != '.'){
+		node down = new node(x, y-1);
+		frontier.enqueue(down);
+	    } else if (board[x-1][y] != '.'){
+		node left = new node(x-1, y);
+		frontier.enqueue(left);
+	    }
+	}
+
+
+
+
+
+	public static void main(String[] args){
+	    maze m = new maze();
+	    System.out.println(m);
+	    m.solve(1,1);
+	    System.out.println(m);
+	}
 }
