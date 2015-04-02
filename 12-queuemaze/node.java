@@ -15,7 +15,7 @@ public class node<E>{
 	next = null;
     }
 
-    public node(int xcor, ycor){
+    public node(int xcor, int ycor){
 	x = xcor;
 	y = ycor;
     }
