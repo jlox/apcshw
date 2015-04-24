@@ -1,0 +1,14 @@
+public class myAQueue(){
+    private int[] queue;\
+    private int head = 0;
+    private int len = 0;
+
+    public myAQueue(){
+	queue = new int[100];
+	head = 99;
+    }
+    
+    public void add(int n){
+	queue[head];
+    }
+}

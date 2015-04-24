@@ -1,0 +1,5 @@
+import java.util.*;
+
+public class frontier {
+    public LinkedList<node> l = new LinkedList<node>();
+}
