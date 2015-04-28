@@ -12,11 +12,11 @@ public class BST{
 	if (t==null){
 	    return "";
 	} else {
-	    s = s + t.getData();
-	    traverse(t.getLeft());
-	    traverse(t.getRight());
+	    s = s + t.getData()
+		+ traverse(t.getLeft())
+		+ traverse(t.getRight());
+	    return s;
 	}
-	return s;
     }
     
     public Node search(Node t, int i){
