@@ -8,16 +8,16 @@ public class Node {
 	return left;
     }
 
-    public void setLeft(){
-
+    public void setLeft(Node n){
+	left = n;
     }
 
     public Node getRight(){
 	return right;
     }
 
-    public void setRight(){
-
+    public void setRight(Node n){
+	right = n;
     }
 		
 }

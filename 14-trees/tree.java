@@ -1,7 +1,7 @@
 public class tree {
 
     public Node search (Node T, Integer i){
-	int c = t.getData().compareTo(i);
+	int c = T.getData().compareTo(i);
 	while (T!=null){
 	    if (c>0){
 		T = T.getRight();
@@ -10,6 +10,14 @@ public class tree {
 	    } else {
 		return T;
 	    }
+	}
+    }
+
+    public void insert (Node n, Integer i){
+	Node t = new Node(i);
+	Node t2 = new Node();
+	while (t != null){
+
 	}
     }
 }

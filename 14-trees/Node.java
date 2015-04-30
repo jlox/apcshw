@@ -4,6 +4,14 @@ public class Node {
 
     // constructor???
 
+    public Node(int n){
+	data = n;
+    }
+
+    public int getData(){
+	return data;
+    }
+
     public Node getLeft(){
 	return left;
     }

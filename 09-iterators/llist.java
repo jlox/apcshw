@@ -28,4 +28,6 @@ public class llist<E> implements Iterable<E>{
 	s = s + "null";
 	return s;
     }
+
+public 
 }
